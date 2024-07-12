@@ -24,7 +24,7 @@ export const Form = () => {
 
     setMessage(resp.message);
     setError(resp.error);
-    //TODO reset()
+    reset()
   };
 
   const [message, setMessage] = useState("");

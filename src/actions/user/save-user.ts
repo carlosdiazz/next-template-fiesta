@@ -6,15 +6,14 @@ import { sendEmail } from "../email/send-email";
 
 export const saveUser = async (user: User): Promise<Response> => {
   try {
-    //TODO
-    //await prisma.users.create({
-    //  data: {
-    //    name: user.name,
-    //    lastName: user.lastName,
-    //    email: user.email,
-    //    numero: user.numero.toString(),
-    //  },
-    //});
+    await prisma.users.create({
+      data: {
+        name: user.name,
+        lastName: user.lastName,
+        email: user.email,
+        numero: user.numero.toString(),
+      },
+    });
 
     await sendEmail(user.email, user.name);
 
