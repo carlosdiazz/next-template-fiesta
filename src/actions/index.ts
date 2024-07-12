@@ -1,4 +1,4 @@
-export * from "./user/save-user";
-export * from "./user/get-user";
+export { saveUser } from "./user/save-user";
+export { getUsers } from "./user/get-user";
 
-export * from "./email/send-email";
+export { sendEmail } from "./email/send-email";
