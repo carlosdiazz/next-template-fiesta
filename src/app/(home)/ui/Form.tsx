@@ -81,7 +81,6 @@ export const Form = () => {
               placeholder="Correo"
               {...register("email", {
                 required: true,
-                pattern: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,
               })}
             />
           </div>

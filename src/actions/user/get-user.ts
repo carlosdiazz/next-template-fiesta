@@ -5,11 +5,12 @@ import { Users } from "@prisma/client";
 
 export const getUsers = async (): Promise<Users[]> => {
   try {
-    return await prisma.users.findMany({
+    const user = await prisma.users.findMany({
       orderBy: {
         id: "asc",
       },
     });
+    return user;
   } catch (e) {
     console.log(`Error obteneindo Usuarios ${e}`);
     return [];
