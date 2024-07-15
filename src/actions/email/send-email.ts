@@ -3,12 +3,23 @@ import nodemailer from "nodemailer";
 import { templateEmail } from "./template-email";
 export const sendEmail = async (email: string, name: string) => {
   const { SMTP_PASSWORD, SMTP_EMAIL } = process.env;
-
+  //! Google
+  //const transport = nodemailer.createTransport({
+  //  service: "gmail",
+  //  host: "smtp.gmail.com",
+  //  port: 465,
+  //  secure: true,
+  //  auth: {
+  //    user: SMTP_EMAIL,
+  //    pass: SMTP_PASSWORD,
+  //  },
+  //});
   const transport = nodemailer.createTransport({
-    service: "gmail",
-    host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
+    //service: "",
+    host: "us2.smtp.mailhostbox.com",
+    port: 587,
+    secure: false,
+    ignoreTLS: true,
     auth: {
       user: SMTP_EMAIL,
       pass: SMTP_PASSWORD,
@@ -16,6 +27,7 @@ export const sendEmail = async (email: string, name: string) => {
   });
   try {
     await transport.verify();
+    console.log("Paso par aenviar correo");
   } catch (e) {
     console.log(`Error no se envio el correo => ${e}`);
     return;
@@ -35,7 +47,10 @@ export const sendEmail = async (email: string, name: string) => {
       //  </div>
       //`,
     });
-  } catch (e) {}
+    console.log("Se envio el correo");
+  } catch (e) {
+    console.log(`Error no se envio el correo => ${e}`);
+  }
 };
 
 //import { EmailTemplate } from "@/components";
