@@ -45,10 +45,10 @@ export const Table = async () => {
                 </tr>
               </thead>
               <tbody>
-                {users.map((user) => (
+                {users.map((user, i) => (
                   <tr className="bg-gray-100 border-b" key={user.id}>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      {user.id}
+                      {i + 1}
                     </td>
                     <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                     {user.name}

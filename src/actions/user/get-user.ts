@@ -7,7 +7,7 @@ export const getUsers = async (): Promise<Users[]> => {
   try {
     const user = await prisma.users.findMany({
       orderBy: {
-        id: "asc",
+        createdAt: "asc",
       },
     });
     return user;

@@ -19,4 +19,5 @@ model Users {
   lastName String
   email String @unique
   numero String
+ createdAt DateTime @default(now())
 }
