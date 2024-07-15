@@ -1,3 +1,4 @@
+export const revalidate = 0;
 import { Table } from "./ui/Table";
 
 export default function NamePage() {
