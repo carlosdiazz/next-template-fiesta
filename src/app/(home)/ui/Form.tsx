@@ -45,9 +45,10 @@ export const Form = () => {
               type="text"
               className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
               placeholder="Nombre"
-              {...register("name", { required: true, minLength: 3 })}
+              {...register("name", { required: true, minLength: {value:3, message: 'Nombre debe tener al menos 3 caracteres' } })}
             />
           </div>
+          {errors.name && <span className="text-red-500 text-xs">{errors.name.message}</span>}
         </div>
         <div className="w-1/2 px-3 mb-5">
           <label htmlFor="" className="text-xs font-semibold px-1">
@@ -61,9 +62,10 @@ export const Form = () => {
               type="text"
               className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
               placeholder="Apellido"
-              {...register("lastName", { required: true, minLength: 3 })}
+              {...register("lastName", { required: true, minLength: { value: 3, message: 'Apellido debe tener al menos 3 caracteres' } })}
             />
           </div>
+          {errors.lastName && <span className="text-red-500 text-xs">{errors.lastName.message}</span>}
         </div>
       </div>
       <div className="flex -mx-3">
@@ -99,9 +101,10 @@ export const Form = () => {
               type="number"
               className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
               placeholder="8095550000"
-              {...register("numero", { required: true, minLength: 8 })}
+              {...register("numero", { required: true, minLength: {value:6, message: 'EL numero debe ser mayor a 6' } })}
             />
           </div>
+          {errors.numero && <span className="text-red-500 text-xs">{errors.numero.message}</span>}
         </div>
       </div>
       <div className="flex -mx-3">

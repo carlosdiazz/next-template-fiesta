@@ -19,7 +19,7 @@ export const saveUser = async (user: User): Promise<Response> => {
 
     return {
       error: false,
-      message: "Se guardo correctamente",
+      message: "Se registro correctamente, porfavor verifica su correo",
     };
   } catch (e) {
     if (e instanceof PrismaClientKnownRequestError) {
