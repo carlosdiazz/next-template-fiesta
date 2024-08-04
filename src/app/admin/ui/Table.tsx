@@ -24,12 +24,7 @@ export const Table = async () => {
                   >
                     Nombre
                   </th>
-                  <th
-                    scope="col"
-                    className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                  >
-                    Apellido
-                  </th>
+
                   <th
                     scope="col"
                     className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
@@ -51,16 +46,14 @@ export const Table = async () => {
                       {i + 1}
                     </td>
                     <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    {user.name}
+                      {user.name}
+                    </td>
+
+                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                      {user.email}
                     </td>
                     <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    {user.lastName}
-                    </td>
-                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    {user.email}
-                    </td>
-                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    {user.numero}
+                      {user.numero}
                     </td>
                   </tr>
                 ))}

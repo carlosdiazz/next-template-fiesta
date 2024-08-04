@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { Form } from "./ui/Form";
 import { ImageDerecha } from "./ui/Image";
+import { redirect } from "next/navigation";
 
 export default function Home() {
+  redirect("/new")
   return (
     <>
       {/* component */}
