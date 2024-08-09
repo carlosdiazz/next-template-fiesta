@@ -1,7 +1,18 @@
 export const revalidate = 0;
+import { auth } from "@/auth";
 import { Table } from "./ui/Table";
+import { redirect } from "next/navigation";
 
-export default function NamePage() {
+export default async function NamePage() {
+
+  const session = await auth();
+
+  if (!session?.user) {
+    redirect("/auth");
+  }
+
+
+
   return (
     <>
       {/* component */}
